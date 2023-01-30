@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const data = [
+      {
+        nome: "Roger Medeiros",
+        sexo: "M",
+        salario: 3250,
+      },
+      {
+        nome: "Carolina Silva",
+        sexo: "F",
+        salario: 1200,
+      },
+      {
+        nome: "Cristina Avila",
+        sexo: "F",
+        salario: 8100,
+      },
+      {
+        nome: "Gustavo Hoffman",
+        sexo: "M",
+        salario: 5200.35,
+      },
+      {
+        nome: "Eva Trindade",
+        sexo: "F",
+        salario: 2501,
+      },
+      {
+        nome: "Andre Mathias",
+        sexo: "M",
+        salario: 1750,
+      },
+      {
+        nome: "Joice Castro da Silva",
+        sexo: "F",
+        salario: 3350.25,
+      },
+    ];
+
+    console.log("Quantidade de pessoas: ", data.length);
+
+    const feminino = data.filter((pessoa) => pessoa.sexo === "F");
+    console.log("Quantidade de pessoas do sexo feminino: ", feminino.length);
+
+    const totalSalarios = data.reduce((acumulador, pessoa) => {
+      return acumulador + pessoa.salario;
+    }, 0);
+    console.log("Soma dos salários: ", totalSalarios);
+
+    const masculino = data.filter((pessoa) => pessoa.sexo === "M");
+    const totalSalariosMasculino = masculino.reduce((acumulador, pessoa) => {
+      return acumulador + pessoa.salario;
+    }, 0);
+    console.log("Soma dos salários dos homens: ", totalSalariosMasculino);
+
+    const existeSalarioSuperior = data.some(
+      (pessoa) => pessoa.salario > 7000
+    );
+    console.log("Existe salário superior a 7000: ", existeSalarioSuperior);
+
+    const indexEva = data.findIndex((pessoa) => pessoa.nome === "Eva Trindade");
+    console.log("Posição de Eva Trindade: ", indexEva);
+
+    const silvas = data.filter((pessoa) => pessoa.nome.includes("Silva"));
+    console.log("Pessoas com sobrenome Silva: ", silvas);
+
+    const nomes = data.map((pessoa) => pessoa.nome);
+    console.log("Nomes: ", nomes);
+  </script>
+</body>
+</html>
