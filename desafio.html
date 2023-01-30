@@ -48,24 +48,24 @@
 
     console.log("Quantidade de pessoas: ", data.length);
 
-    const feminino = data.filter((pessoa) => pessoa.sexo === "F");
-    console.log("Quantidade de pessoas do sexo feminino: ", feminino.length);
+    const Fem = data.filter((pessoa) => pessoa.sexo === "F");
+    console.log("Quantidade de pessoas do sexo feminino: ", Fem.length);
 
     const totalSalarios = data.reduce((acumulador, pessoa) => {
       return acumulador + pessoa.salario;
     }, 0);
     console.log("Soma dos salários: ", totalSalarios);
 
-    const masculino = data.filter((pessoa) => pessoa.sexo === "M");
-    const totalSalariosMasculino = masculino.reduce((acumulador, pessoa) => {
+    const Masc = data.filter((pessoa) => pessoa.sexo === "M");
+    const SalariosMasc = Masc.reduce((acumulador, pessoa) => {
       return acumulador + pessoa.salario;
     }, 0);
-    console.log("Soma dos salários dos homens: ", totalSalariosMasculino);
+    console.log("Soma dos salários dos homens: ", SalariosMasc);
 
-    const existeSalarioSuperior = data.some(
+    const SalarioSup = data.some(
       (pessoa) => pessoa.salario > 7000
     );
-    console.log("Existe salário superior a 7000: ", existeSalarioSuperior);
+    console.log("Existe salário superior a 7000: ", SalarioSup);
 
     const indexEva = data.findIndex((pessoa) => pessoa.nome === "Eva Trindade");
     console.log("Posição de Eva Trindade: ", indexEva);
